@@ -243,3 +243,6 @@ poetry.lock
 pyproject.toml
 .pythonlibs
 replit.nix
+
+#proj specific
+champion.json

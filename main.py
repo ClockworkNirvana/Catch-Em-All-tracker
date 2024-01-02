@@ -10,7 +10,7 @@ import urllib.request
 CDN_VER = '13.24.1'
 CDN_URL = 'https://ddragon.leagueoflegends.com/cdn/13.24.1/data/en_US/champion.json'
 if os.path.isfile('champion.json') == False:
-    with urllib.request.urlopen("CDN_URL") as url:
+    with urllib.request.urlopen(CDN_URL) as url:
         champs = json.load(url)
         json.dump(champs, open('champion.json', 'w'))
 else:
@@ -18,7 +18,7 @@ else:
         champs = json.load(read_content)
     if champs['version'] != CDN_VER:
         print("New champion.json version detected. Updating...")
-        with urllib.request.urlopen("CDN_URL") as url:
+        with urllib.request.urlopen(CDN_URL) as url:
             champs = json.load(url)
             json.dump(champs, open('champion.json', 'w'))
 
