@@ -33,6 +33,7 @@ def masteries_json(gameName, tag, reg) -> list:
     URL = "https://{{region}}.api.riotgames.com/{{req}}?api_key={key}"
 
     # riot api-key changes every 24 hrs
+    # I change this so dont even try
     API_KEY = "RGAPI-522a5bab-26a7-4101-83d2-16674ce38b54"
     URL = URL.format(key=API_KEY)
 
@@ -61,7 +62,7 @@ def masteries_json(gameName, tag, reg) -> list:
     print('RiotID:', gameName+'#'+tag, 'from', reg, 'loaded')
     return r.json()
 
-data = masteries_json('KPG Clockwork','SG2','sg2')
+data = masteries_json(a,b,c)
 
 class champion:
     def __init__(self, id, level, points):
