@@ -1,4 +1,4 @@
-from data import data
+from data import data, champs
 
 class champion:
     def __init__(self, id, level, points):
@@ -9,7 +9,10 @@ class champion:
 masteries = []
 
 for thing in data:
-    masteries.append(champion(thing['championId'], thing['championLevel'], thing['championPoints']))
+    masteries.append(champion(
+        thing['championId'], 
+        thing['championLevel'], 
+        thing['championPoints']))
 
 # Commented out as per instruction
 # for 

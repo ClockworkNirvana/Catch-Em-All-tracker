@@ -245,5 +245,5 @@ pyproject.toml
 replit.nix
 
 #proj specific
-champion.json
+championlist.json
 settings.py
