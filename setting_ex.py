@@ -6,4 +6,4 @@ class User:
         
 # set these values to your own then change to settings.py
 API_KEY = "example key"
-query = User("name" , "tag", "region")
+query = User("name", "tag", "region")
