@@ -246,3 +246,4 @@ replit.nix
 
 #proj specific
 champion.json
+settings.py
