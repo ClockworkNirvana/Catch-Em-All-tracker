@@ -5,9 +5,11 @@ import urllib.parse
 import urllib.request
 from settings import API_KEY, query
 
-#champion cdn version v13.24
-CDN_VER = '13.24.1'
-CDN_URL = 'https://ddragon.leagueoflegends.com/cdn/13.24.1/data/en_US/champion.json'
+#champion cdn version check
+CDN_VER_CHECK_URL = "https://ddragon.leagueoflegends.com/api/versions.json"
+CDN_VER = json.load(urllib.request.urlopen(CDN_VER_CHECK_URL))[0]
+CDN_URL = 'https://ddragon.leagueoflegends.com/cdn/{}/data/en_US/champion.json'.format(CDN_VER)
+
 if os.path.isfile('champion.json') == False:
     with urllib.request.urlopen(CDN_URL) as url:
         champs = json.load(url)
